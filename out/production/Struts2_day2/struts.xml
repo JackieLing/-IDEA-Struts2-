@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<!--测试Struts2中的标准开发方式 ActionSupport-->
+<struts>
+    <package name="user" extends="struts-default" namespace="/user">
+        <!--登录action-->
+        <action name="login" class="com.linghu.action.UserAction">
+            <result name="OK" type="redirect">/index.jsp</result>
+        </action>
+
+        <!--注册action-->
+        <action name="register" class="com.linghu.action.UserAction" >
+            <result name="OK" type="redirect">/index.jsp</result>
+        </action>
+    </package>
+
+    <package name="param" extends="struts-default" namespace="/param">
+        <action name="param" class="com.linghu.action.ParamAction" method="test">
+            <result name="OK">/index.jsp</result>
+        </action>
+    </package>
+
+    <package name="day05" extends="struts-default" namespace="/day05">
+        <action name="controller" class="com.linghu.entity.Controller" method="test">
+            <result name="OK">/index.jsp</result>
+        </action>
+    </package>
+    <!--文件上传包-->
+    <package name="file" extends="struts-default" namespace="/file">
+        <action name="upload" class="com.linghu.action.FileAction" method="upload">
+            <result name="OK">/index.jsp</result>
+        </action>
+    </package>
+</struts>
